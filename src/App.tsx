@@ -6,16 +6,34 @@ import quiz from "./components/static/data";
 import { useState } from "react";
 
 function App() {
-  const [question, setQuestion] = useState(quiz.questions[0]);
+  const [question, setQuestion] = useState([]);
+  let activeQuestionIndex = question.length;
+  const handleQuestionOut = (userAnswer) => {
+    setQuestion((prevQeustion) => {
+      return [...prevQeustion, userAnswer];
+    });
+  };
 
   return (
     <main style={{ backgroundColor: "#f0f0f0", height: "100vh" }}>
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<QuizzApp question={question} />} />
-        </Routes>
-      </BrowserRouter>
+      <main>
+        <h3>{quiz.questions[activeQuestionIndex].name}</h3>
+        <ol>
+          {quiz.questions[activeQuestionIndex].variants.map(
+            (variant, index) => {
+              return (
+                <li key={index}>
+                  <button onClick={() => handleQuestionOut(variant.name)}>
+                    {variant.name}
+                  </button>
+                </li>
+              );
+            }
+          )}
+        </ol>
+        <button>continue</button>
+      </main>
     </main>
   );
 }
