@@ -15,7 +15,7 @@ export const QuizProgress: React.FC<{
             max="100"
             className={styles["progress-bar"]}
           />
-          <span>{currentQuestion + 1}/{qu}</span>
+          <span>{currentQuestion + 1}/5</span>
         </span>
         <button
           disabled={disabled === null}
