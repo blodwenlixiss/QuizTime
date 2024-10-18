@@ -1,0 +1,58 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: white;
+}
+.progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 50%;
+}
+
+.continue-button {
+  display: block;
+  width: 30%;
+  padding: 15px;
+  background-color: #31cd63;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.continue-button:hover {
+  background-color: #18740e;
+}
+
+.continue-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+.progress-bar {
+  overflow: hidden;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #f3f3f3; /* Background of the bar */
+  border-radius: 10px;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: #31cd63; /* New progress color - Coral */
+  border-radius: 10px;
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: #31cd63; /* New progress color for Firefox - Coral */
+  border-radius: 10px;
+}
